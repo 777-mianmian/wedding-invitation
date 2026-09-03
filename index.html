@@ -15,7 +15,7 @@
   <style>
     :root {
       --paper-bg: #F0E9D8;
-      --paper-bg-dark: #E6DCC4;
+      --paper-bgx-dark: #E6DCC4;
       --ink-brown: #8B5A2B;
       --ink-dark: #5C3A1E;
       --vermilion: #C41E3A;
@@ -196,6 +196,17 @@
     <div class="top-ornament">
       <div class="ornament-line">
         <div class="line"></div>
+<style>
+body { background: #EDE4CF !important; background-attachment: fixed !important; }
+.splash-overlay { background: #EDE4CF !important; }
+.map-watermark-cover { display: none !important; }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var covers = document.querySelectorAll('.map-watermark-cover');
+  covers.forEach(function(el) { el.remove(); });
+});
+</script>
         <div class="ornament-diamond"></div>
         <div class="line"></div>
       </div>
