@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>李政志 & 刘淑红 · 结婚邀请函</title>
+  <meta name="description" content="李政志 & 刘淑红 结婚典礼邀请函 · 2026年10月3日 · 敬邀莅临">
+  <meta property="og:title" content="李政志 & 刘淑红 · 结婚邀请函">
+  <meta property="og:description" content="2026年10月3日 农历八月廿三 · 婚礼喜筵 敬邀莅临">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Ma+Shan+Zheng&display=swap">
+  
+  <style>
+    :root {
+      --paper-bg: #F0E9D8;
+      --paper-bg-dark: #E6DCC4;
+      --ink-brown: #8B5A2B;
+      --ink-dark: #5C3A1E;
+      --vermilion: #C41E3A;
+      --vermilion-dark: #9B1830;
+      --gold: #C9A962;
+      --gold-light: #DCC38A;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+      font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+      color: var(--ink-brown);
+      background: var(--paper-bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background: linear-gradient(180deg, #F2EBDB 0%, #EDE4CF 30%, #F0E9D8 60%, #EAE0C8 100%);
+      background-attachment: fixed;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .page { position: relative; z-index: 2; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+
+    .top-ornament { width: 100%; padding: 32px 0 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; opacity: 0; transform: translateY(-20px); animation: fadeDown 1.2s ease forwards; animation-delay: 0.3s; }
+    .ornament-line { display: flex; align-items: center; gap: 16px; }
+    .ornament-line .line { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .ornament-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
+    .we-need-you { font-size: 13px; letter-spacing: 6px; color: var(--ink-brown); opacity: 0.75; text-indent: 6px; }
+
+    .invitation-image-wrap { width: 100%; max-width: 640px; padding: 0; opacity: 0; transform: translateY(30px); animation: fadeUp 1.4s ease forwards; animation-delay: 0.5s; }
+    .invitation-image { width: 100%; height: auto; display: block; border-radius: 0; box-shadow: none; }
+
+    .countdown-section { width: 100%; max-width: 600px; padding: 40px 32px 8px; opacity: 0; transform: translateY(20px); animation: fadeUp 1s ease forwards; animation-delay: 1s; }
+    .countdown-title { text-align: center; font-size: 14px; letter-spacing: 4px; color: var(--ink-brown); opacity: 0.7; margin-bottom: 20px; text-indent: 4px; }
+    .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .countdown-item { text-align: center; background: rgba(255, 255, 255, 0.35); border: 1px solid rgba(201, 169, 98, 0.35); border-radius: 14px; padding: 16px 4px 14px; position: relative; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+    .countdown-item .num { font-size: 28px; font-weight: 600; color: var(--vermilion); line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -1px; }
+    .countdown-item .label { font-size: 11px; color: var(--ink-brown); opacity: 0.6; margin-top: 6px; letter-spacing: 2px; }
+
+    .action-section { width: 100%; max-width: 600px; padding: 28px 32px 8px; display: flex; gap: 12px; opacity: 0; transform: translateY(20px); animation: fadeUp 1s ease forwards; animation-delay: 1.4s; }
+    .action-btn { flex: 1; height: 48px; border: none; border-radius: 24px; font-family: inherit; font-size: 15px; font-weight: 500; letter-spacing: 2px; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
+    .action-btn.primary { background: var(--vermilion); color: #fff; box-shadow: 0 4px 16px rgba(196, 30, 58, 0.25); }
+    .action-btn.primary:active { transform: scale(0.97); background: var(--vermilion-dark); }
+    .action-btn.secondary { background: transparent; color: var(--ink-brown); border: 1px solid var(--gold); }
+    .action-btn.secondary:active { transform: scale(0.97); background: rgba(201, 169, 98, 0.1); }
+    .action-btn svg { width: 18px; height: 18px; }
+
+    .map-section { width: 100%; max-width: 600px; padding: 24px 24px 8px; opacity: 0; transform: translateY(20px); animation: fadeUp 1s ease forwards; animation-delay: 1.2s; }
+    .map-card { border-radius: 16px; overflow: hidden; border: 1px solid rgba(201, 169, 98, 0.4); box-shadow: 0 4px 24px rgba(92, 58, 30, 0.1); background: var(--paper-bg); }
+    .map-image-wrap { width: 100%; overflow: hidden; position: relative; }
+    .map-image { width: 100%; height: auto; display: block; filter: saturate(1.2) sepia(0.08) brightness(1.02); }
+    .map-watermark-cover { position: absolute; top: 0; left: 0; width: 120px; height: 50px; background: linear-gradient(135deg, #E8DFC8 0%, #E0D5BA 100%); z-index: 2; }
+    .map-info { padding: 16px 20px; display: flex; align-items: center; gap: 12px; background: rgba(255, 255, 255, 0.4); border-top: 1px solid rgba(201, 169, 98, 0.25); }
+    .map-info-icon { width: 36px; height: 36px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: var(--vermilion); border-radius: 50%; color: #fff; }
+    .map-info-icon svg { width: 18px; height: 18px; }
+    .map-info-text .map-title { font-size: 15px; font-weight: 600; color: var(--ink-dark); line-height: 1.4; }
+    .map-info-text .map-address { font-size: 12px; color: var(--ink-brown); opacity: 0.65; margin-top: 2px; }
+
+    .footer-blessing { width: 100%; padding: 48px 24px 80px; text-align: center; opacity: 0; transform: translateY(20px); animation: fadeUp 1s ease forwards; animation-delay: 1.8s; }
+    .double-happiness { font-size: 48px; color: var(--vermilion); font-family: 'Ma Shan Zheng', 'Noto Serif SC', serif; margin-bottom: 16px; opacity: 0.9; line-height: 1; }
+    .blessing-text { font-size: 14px; letter-spacing: 4px; color: var(--ink-brown); opacity: 0.7; line-height: 2; }
+    .couple-names { font-size: 18px; letter-spacing: 6px; color: var(--ink-dark); margin-bottom: 12px; font-weight: 500; text-indent: 6px; }
+
+    .music-btn { position: fixed; top: 20px; right: 20px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(201, 169, 98, 0.4); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 100; box-shadow: 0 2px 12px rgba(92, 58, 30, 0.12); transition: all 0.3s ease; opacity: 0; transform: scale(0.8); animation: musicIn 0.8s ease forwards; animation-delay: 2s; }
+    .music-btn:active { transform: scale(0.92); }
+    .music-btn svg { width: 20px; height: 20px; color: var(--vermilion); transition: transform 0.3s ease; }
+    .music-btn.playing svg { animation: musicSpin 4s linear infinite; }
+    .music-note { position: absolute; font-size: 10px; color: var(--gold); animation: noteFloat 2s ease-out infinite; pointer-events: none; opacity: 0; }
+    .music-btn.playing .music-note:nth-child(2) { animation-delay: 0s; }
+    .music-btn.playing .music-note:nth-child(3) { animation-delay: 0.7s; }
+    .music-btn.playing .music-note:nth-child(4) { animation-delay: 1.4s; }
+
+    .share-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); z-index: 200; display: none; align-items: flex-start; justify-content: flex-end; padding: 20px 20px 0; opacity: 0; transition: opacity 0.3s ease; }
+    .share-overlay.show { display: flex; opacity: 1; }
+    .share-guide { text-align: right; color: #fff; padding-top: 12px; }
+    .share-guide svg { width: 40px; height: 40px; margin-bottom: 12px; margin-left: auto; display: block; }
+    .share-guide p { font-size: 15px; line-height: 1.8; letter-spacing: 1px; }
+    .share-guide p strong { color: var(--gold-light); }
+
+    .splash-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 300;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+      background: linear-gradient(180deg, #F2EBDB 0%, #EDE4CF 30%, #F0E9D8 60%, #EAE0C8 100%);
+    }
+    .splash-overlay::before {
+      content: '';
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .splash-overlay.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .splash-logo { width: 320px; height: 320px; position: relative; z-index: 1; }
+    .splash-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .splash-title { font-size: 16px; letter-spacing: 8px; color: var(--ink-brown); text-indent: 8px; position: relative; z-index: 1; }
+    .splash-names { font-size: 22px; letter-spacing: 6px; color: var(--ink-dark); font-weight: 500; text-indent: 6px; position: relative; z-index: 1; }
+    .splash-enter { margin-top: 32px; padding: 14px 48px; background: var(--vermilion); color: #fff; border: none; border-radius: 28px; font-family: inherit; font-size: 15px; letter-spacing: 4px; cursor: pointer; box-shadow: 0 4px 20px rgba(196, 30, 58, 0.3); transition: all 0.3s ease; animation: bounce 2s ease-in-out infinite; position: relative; z-index: 1; }
+    .splash-enter:active { transform: scale(0.95); }
+    .splash-tip { font-size: 12px; color: var(--ink-brown); opacity: 0.5; letter-spacing: 2px; margin-top: 16px; position: relative; z-index: 1; }
+
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeDown { to { opacity: 1; transform: translateY(0); } }
+    @keyframes musicIn { to { opacity: 1; transform: scale(1); } }
+    @keyframes musicSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes noteFloat { 0% { transform: translateY(0) scale(1); opacity: 0.8; } 100% { transform: translateY(-40px) scale(0.5); opacity: 0; } }
+    @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.9; } }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+
+    @media (min-width: 640px) {
+      .invitation-image-wrap { padding: 16px 40px 0; }
+      .countdown-section { padding: 48px 40px 8px; }
+      .countdown-item .num { font-size: 32px; }
+      .action-section { padding: 28px 40px 8px; }
+      .map-section { padding: 24px 32px 8px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- 开屏遮罩 -->
+  <div class="splash-overlay" id="splashOverlay">
+    <div class="splash-logo">
+      <img src="https://aka.doubaocdn.com/s/G3XcTJwbvh" alt="结婚Logo">
+    </div>
+    <div class="splash-title">结 婚 邀 请 函</div>
+    <div class="splash-names">李政志 · 刘淑红</div>
+    <button class="splash-enter" id="enterBtn">收 下 邀 请</button>
+    <div class="splash-tip">点击开启 · 背景音乐随之响起</div>
+  </div>
+
+  <!-- 分享提示 -->
+  <div class="share-overlay" id="shareOverlay">
+    <div class="share-guide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+        <polyline points="16 6 12 2 8 6"/>
+        <line x1="12" y1="2" x2="12" y2="15"/>
+      </svg>
+      <p>点击右上角 <strong>「···」</strong></p>
+      <p>选择 <strong>「分享到朋友圈」</strong></p>
+      <p>把这份喜悦分享给亲友</p>
+    </div>
+  </div>
+
+  <!-- 音乐按钮 -->
+  <div class="music-btn" id="musicBtn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18V5l12-2v13"/>
+      <circle cx="6" cy="18" r="3"/>
+      <circle cx="18" cy="16" r="3"/>
+    </svg>
+    <span class="music-note" style="top: -4px; left: 8px;">♪</span>
+    <span class="music-note" style="top: -8px; right: 4px;">♫</span>
+    <span class="music-note" style="top: -2px; right: -2px;">♪</span>
+  </div>
+
+  <!-- 背景音乐 -->
+  <audio id="bgm" loop preload="auto">
+    <source src="https://aka.doubaocdn.com/s/8eEjU8ggBe" type="audio/mpeg">
+  </audio>
+
+  <div class="page">
+    <!-- 顶部装饰 -->
+    <div class="top-ornament">
+      <div class="ornament-line">
+        <div class="line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="line"></div>
+      </div>
+      <div class="we-need-you">诚 挚 邀 请</div>
+    </div>
+
+    <!-- 邀请函主图 -->
+    <div class="invitation-image-wrap">
+      <img class="invitation-image" src="https://aka.doubaocdn.com/s/Uvw8SygVtF" alt="李政志 & 刘淑红 结婚邀请函">
+    </div>
+
+    <!-- 倒计时 -->
+    <div class="countdown-section">
+      <div class="countdown-title">距 离 婚 礼 还 有</div>
+      <div class="countdown-grid" id="countdownGrid">
+        <div class="countdown-item"><div class="num" id="days">--</div><div class="label">天</div></div>
+        <div class="countdown-item"><div class="num" id="hours">--</div><div class="label">时</div></div>
+        <div class="countdown-item"><div class="num" id="minutes">--</div><div class="label">分</div></div>
+        <div class="countdown-item"><div class="num" id="seconds">--</div><div class="label">秒</div></div>
+      </div>
+    </div>
+
+    <!-- 地图 -->
+    <div class="map-section">
+      <div class="map-card">
+        <div class="map-image-wrap">
+          <img class="map-image" src="https://aka.doubaocdn.com/s/sklcNkLTXU" alt="婚礼地点地图">
+          <div class="map-watermark-cover"></div>
+        </div>
+        <div class="map-info">
+          <div class="map-info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="map-info-text">
+            <div class="map-title">三堂街镇 · 合水桥 应良超市旁</div>
+            <div class="map-address">在家设宴 · 319省道</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 操作按钮 -->
+    <div class="action-section">
+      <button class="action-btn secondary" id="shareBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="5" r="3"/>
+          <circle cx="6" cy="12" r="3"/>
+          <circle cx="18" cy="19" r="3"/>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+        </svg>
+        分 享
+      </button>
+      <button class="action-btn primary" id="calendarBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+          <polyline points="17 21 17 13 7 13 7 21"/>
+          <polyline points="7 3 7 8 15 8"/>
+        </svg>
+        添加日历
+      </button>
+    </div>
+
+    <!-- 底部祝福 -->
+    <div class="footer-blessing">
+      <div class="double-happiness">囍</div>
+      <div class="couple-names">李政志 &nbsp;&amp;&nbsp; 刘淑红</div>
+      <div class="blessing-text">婚 礼 喜 筵 &nbsp; 敬 邀 莅 临</div>
+    </div>
+  </div>
+
+  <script>
+    const bgm = document.getElementById('bgm');
+    const musicBtn = document.getElementById('musicBtn');
+    const splashOverlay = document.getElementById('splashOverlay');
+    const enterBtn = document.getElementById('enterBtn');
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (isPlaying) { bgm.pause(); musicBtn.classList.remove('playing'); }
+      else { bgm.play().then(() => { musicBtn.classList.add('playing'); }).catch(err => console.log('播放失败:', err)); }
+      isPlaying = !isPlaying;
+    }
+
+    musicBtn.addEventListener('click', toggleMusic);
+
+    enterBtn.addEventListener('click', function() {
+      bgm.volume = 0.6;
+      bgm.play().then(() => { musicBtn.classList.add('playing'); isPlaying = true; })
+        .catch(err => console.log('自动播放被阻止:', err));
+      splashOverlay.classList.add('hidden');
+    });
+
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) { if (isPlaying) bgm.pause(); }
+      else { if (isPlaying) bgm.play().catch(() => {}); }
+    });
+
+    const weddingDate = new Date('2026-10-03T12:08:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = weddingDate - now;
+      if (diff <= 0) {
+        document.getElementById('days').textContent = '0';
+        document.getElementById('hours').textContent = '0';
+        document.getElementById('minutes').textContent = '0';
+        document.getElementById('seconds').textContent = '0';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    const shareBtn = document.getElementById('shareBtn');
+    const shareOverlay = document.getElementById('shareOverlay');
+
+    shareBtn.addEventListener('click', function() {
+      const ua = navigator.userAgent.toLowerCase();
+      const isWeChat = /micromessenger/.test(ua);
+      if (isWeChat) { shareOverlay.classList.add('show'); }
+      else if (navigator.share) {
+        navigator.share({
+          title: '李政志 & 刘淑红 · 结婚邀请函',
+          text: '2026年10月3日 农历八月廿三 · 婚礼喜筵 敬邀莅临',
+          url: window.location.href
+        }).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          shareBtn.textContent = '链接已复制 ✓';
+          setTimeout(() => {
+            shareBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> 分 享';
+          }, 2000);
+        }).catch(() => { shareOverlay.classList.add('show'); });
+      }
+    });
+    shareOverlay.addEventListener('click', function() { shareOverlay.classList.remove('show'); });
+
+    const calendarBtn = document.getElementById('calendarBtn');
+    calendarBtn.addEventListener('click', function() {
+      const icsContent = [
+        'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Wedding Invitation//CN','CALSCALE:GREGORIAN',
+        'BEGIN:VEVENT','DTSTART:20261003T120800','DTEND:20261003T150000',
+        'SUMMARY:李政志 & 刘淑红 结婚典礼',
+        'DESCRIPTION:诚挚邀请您出席李政志与刘淑红的结婚典礼',
+        'LOCATION:湖南省桃江县三堂街镇（在家设宴）',
+        'END:VEVENT','END:VCALENDAR'
+      ].join('\r\n');
+      const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = '李政志&刘淑红婚礼.ics';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      calendarBtn.textContent = '已添加 ✓';
+      setTimeout(() => {
+        calendarBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> 添加日历';
+      }, 2000);
+    });
+
+    document.addEventListener('WeixinJSBridgeReady', function() {}, false);
+  </script>
+</body>
+</html>
