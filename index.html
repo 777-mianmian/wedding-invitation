@@ -15,7 +15,7 @@
   <style>
     :root {
       --paper-bg: #F0E9D8;
-      --paper-bgx-dark: #E6DCC4;
+      --paper-bg-dark: #E6DCC4;
       --ink-brown: #8B5A2B;
       --ink-dark: #5C3A1E;
       --vermilion: #C41E3A;
@@ -36,7 +36,7 @@
     }
 
     body {
-      background: linear-gradient(180deg, #F2EBDB 0%, #EDE4CF 30%, #F0E9D8 60%, #EAE0C8 100%);
+      background: linear-gradient(180deg, #F2EBDB 0%, #EDE4CF 20%, #F0E9D8 40%, #EAE0C8 60%, #EDE4CF 80%, #F0E9D8 100%);
       background-attachment: fixed;
     }
 
@@ -50,15 +50,18 @@
 
     .page { position: relative; z-index: 2; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
 
+    /* 顶部装饰 */
     .top-ornament { width: 100%; padding: 32px 0 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; opacity: 0; transform: translateY(-20px); animation: fadeDown 1.2s ease forwards; animation-delay: 0.3s; }
     .ornament-line { display: flex; align-items: center; gap: 16px; }
     .ornament-line .line { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
     .ornament-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
     .we-need-you { font-size: 13px; letter-spacing: 6px; color: var(--ink-brown); opacity: 0.75; text-indent: 6px; }
 
+    /* 主图区域 */
     .invitation-image-wrap { width: 100%; max-width: 640px; padding: 0; opacity: 0; transform: translateY(30px); animation: fadeUp 1.4s ease forwards; animation-delay: 0.5s; }
     .invitation-image { width: 100%; height: auto; display: block; border-radius: 0; box-shadow: none; }
 
+    /* 倒计时 */
     .countdown-section { width: 100%; max-width: 600px; padding: 40px 32px 8px; opacity: 0; transform: translateY(20px); animation: fadeUp 1s ease forwards; animation-delay: 1s; }
     .countdown-title { text-align: center; font-size: 14px; letter-spacing: 4px; color: var(--ink-brown); opacity: 0.7; margin-bottom: 20px; text-indent: 4px; }
     .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
@@ -66,15 +69,7 @@
     .countdown-item .num { font-size: 28px; font-weight: 600; color: var(--vermilion); line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -1px; }
     .countdown-item .label { font-size: 11px; color: var(--ink-brown); opacity: 0.6; margin-top: 6px; letter-spacing: 2px; }
 
-<style>
-body {
-  background: linear-gradient(180deg, #F2EBDB 0%, #EDE4CF 20%, #F0E9D8 40%, #EAE0C8 60%, #EDE4CF 80%, #F0E9D8 100%) !important;
-  background-attachment: fixed !important;
-}
-.splash-overlay {
-  background: linear-gradient(180deg, #F2EBDB 0%, #EDE4CF 20%, #F0E9D8 40%, #EAE0C8 60%, #EDE4CF 80%, #F0E9D8 100%) !important;
-}
-</style>
+    /* 操作按钮 */
     .action-section { width: 100%; max-width: 600px; padding: 28px 32px 8px; display: flex; gap: 12px; opacity: 0; transform: translateY(20px); animation: fadeUp 1s ease forwards; animation-delay: 1.4s; }
     .action-btn { flex: 1; height: 48px; border: none; border-radius: 24px; font-family: inherit; font-size: 15px; font-weight: 500; letter-spacing: 2px; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
     .action-btn.primary { background: var(--vermilion); color: #fff; box-shadow: 0 4px 16px rgba(196, 30, 58, 0.25); }
@@ -83,22 +78,24 @@ body {
     .action-btn.secondary:active { transform: scale(0.97); background: rgba(201, 169, 98, 0.1); }
     .action-btn svg { width: 18px; height: 18px; }
 
+    /* 地图 */
     .map-section { width: 100%; max-width: 600px; padding: 24px 24px 8px; opacity: 0; transform: translateY(20px); animation: fadeUp 1s ease forwards; animation-delay: 1.2s; }
     .map-card { border-radius: 16px; overflow: hidden; border: 1px solid rgba(201, 169, 98, 0.4); box-shadow: 0 4px 24px rgba(92, 58, 30, 0.1); background: var(--paper-bg); }
     .map-image-wrap { width: 100%; overflow: hidden; position: relative; }
     .map-image { width: 100%; height: auto; display: block; filter: saturate(1.2) sepia(0.08) brightness(1.02); }
-    .map-watermark-cover { position: absolute; top: 0; left: 0; width: 120px; height: 50px; background: linear-gradient(135deg, #E8DFC8 0%, #E0D5BA 100%); z-index: 2; }
     .map-info { padding: 16px 20px; display: flex; align-items: center; gap: 12px; background: rgba(255, 255, 255, 0.4); border-top: 1px solid rgba(201, 169, 98, 0.25); }
     .map-info-icon { width: 36px; height: 36px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: var(--vermilion); border-radius: 50%; color: #fff; }
     .map-info-icon svg { width: 18px; height: 18px; }
     .map-info-text .map-title { font-size: 15px; font-weight: 600; color: var(--ink-dark); line-height: 1.4; }
     .map-info-text .map-address { font-size: 12px; color: var(--ink-brown); opacity: 0.65; margin-top: 2px; }
 
+    /* 底部祝福 */
     .footer-blessing { width: 100%; padding: 48px 24px 80px; text-align: center; opacity: 0; transform: translateY(20px); animation: fadeUp 1s ease forwards; animation-delay: 1.8s; }
     .double-happiness { font-size: 48px; color: var(--vermilion); font-family: 'Ma Shan Zheng', 'Noto Serif SC', serif; margin-bottom: 16px; opacity: 0.9; line-height: 1; }
     .blessing-text { font-size: 14px; letter-spacing: 4px; color: var(--ink-brown); opacity: 0.7; line-height: 2; }
     .couple-names { font-size: 18px; letter-spacing: 6px; color: var(--ink-dark); margin-bottom: 12px; font-weight: 500; text-indent: 6px; }
 
+    /* 音乐按钮 */
     .music-btn { position: fixed; top: 20px; right: 20px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(201, 169, 98, 0.4); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 100; box-shadow: 0 2px 12px rgba(92, 58, 30, 0.12); transition: all 0.3s ease; opacity: 0; transform: scale(0.8); animation: musicIn 0.8s ease forwards; animation-delay: 2s; }
     .music-btn:active { transform: scale(0.92); }
     .music-btn svg { width: 20px; height: 20px; color: var(--vermilion); transition: transform 0.3s ease; }
@@ -108,6 +105,7 @@ body {
     .music-btn.playing .music-note:nth-child(3) { animation-delay: 0.7s; }
     .music-btn.playing .music-note:nth-child(4) { animation-delay: 1.4s; }
 
+    /* 分享提示 */
     .share-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); z-index: 200; display: none; align-items: flex-start; justify-content: flex-end; padding: 20px 20px 0; opacity: 0; transition: opacity 0.3s ease; }
     .share-overlay.show { display: flex; opacity: 1; }
     .share-guide { text-align: right; color: #fff; padding-top: 12px; }
@@ -115,11 +113,12 @@ body {
     .share-guide p { font-size: 15px; line-height: 1.8; letter-spacing: 1px; }
     .share-guide p strong { color: var(--gold-light); }
 
+    /* 开屏遮罩 */
     .splash-overlay {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 300;
       display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;
       transition: opacity 0.8s ease, visibility 0.8s ease;
-      background: linear-gradient(180deg, #F2EBDB 0%, #EDE4CF 30%, #F0E9D8 60%, #EAE0C8 100%);
+      background: linear-gradient(180deg, #F2EBDB 0%, #EDE4CF 20%, #F0E9D8 40%, #EAE0C8 60%, #EDE4CF 80%, #F0E9D8 100%);
     }
     .splash-overlay::before {
       content: '';
@@ -136,6 +135,7 @@ body {
     .splash-enter:active { transform: scale(0.95); }
     .splash-tip { font-size: 12px; color: var(--ink-brown); opacity: 0.5; letter-spacing: 2px; margin-top: 16px; position: relative; z-index: 1; }
 
+    /* 动画 */
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeDown { to { opacity: 1; transform: translateY(0); } }
     @keyframes musicIn { to { opacity: 1; transform: scale(1); } }
@@ -144,6 +144,7 @@ body {
     @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.9; } }
     @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
 
+    /* 响应式 */
     @media (min-width: 640px) {
       .invitation-image-wrap { padding: 16px 40px 0; }
       .countdown-section { padding: 48px 40px 8px; }
@@ -205,17 +206,6 @@ body {
     <div class="top-ornament">
       <div class="ornament-line">
         <div class="line"></div>
-<style>
-body { background: #EDE4CF !important; background-attachment: fixed !important; }
-.splash-overlay { background: #EDE4CF !important; }
-.map-watermark-cover { display: none !important; }
-</style>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var covers = document.querySelectorAll('.map-watermark-cover');
-  covers.forEach(function(el) { el.remove(); });
-});
-</script>
         <div class="ornament-diamond"></div>
         <div class="line"></div>
       </div>
@@ -243,7 +233,6 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="map-card">
         <div class="map-image-wrap">
           <img class="map-image" src="https://aka.doubaocdn.com/s/sklcNkLTXU" alt="婚礼地点地图">
-          <div class="map-watermark-cover"></div>
         </div>
         <div class="map-info">
           <div class="map-info-icon">
@@ -291,6 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 
   <script>
+    // === BGM 音乐控制 ===
     const bgm = document.getElementById('bgm');
     const musicBtn = document.getElementById('musicBtn');
     const splashOverlay = document.getElementById('splashOverlay');
@@ -317,6 +307,7 @@ document.addEventListener('DOMContentLoaded', function() {
       else { if (isPlaying) bgm.play().catch(() => {}); }
     });
 
+    // === 倒计时 ===
     const weddingDate = new Date('2026-10-03T12:08:00').getTime();
 
     function updateCountdown() {
@@ -341,6 +332,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
+    // === 分享功能 ===
     const shareBtn = document.getElementById('shareBtn');
     const shareOverlay = document.getElementById('shareOverlay');
 
@@ -358,13 +350,14 @@ document.addEventListener('DOMContentLoaded', function() {
         navigator.clipboard.writeText(window.location.href).then(() => {
           shareBtn.textContent = '链接已复制 ✓';
           setTimeout(() => {
-            shareBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> 分 享';
+            shareBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> 分 享`;
           }, 2000);
         }).catch(() => { shareOverlay.classList.add('show'); });
       }
     });
     shareOverlay.addEventListener('click', function() { shareOverlay.classList.remove('show'); });
 
+    // === 添加日历 ===
     const calendarBtn = document.getElementById('calendarBtn');
     calendarBtn.addEventListener('click', function() {
       const icsContent = [
@@ -386,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function() {
       URL.revokeObjectURL(url);
       calendarBtn.textContent = '已添加 ✓';
       setTimeout(() => {
-        calendarBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> 添加日历';
+        calendarBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> 添加日历`;
       }, 2000);
     });
 
