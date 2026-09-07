@@ -101,6 +101,25 @@
     .share-guide svg { width: 40px; height: 40px; margin-bottom: 12px; margin-left: auto; display: block; }
     .share-guide p { font-size: 15px; line-height: 1.8; letter-spacing: 1px; }
     .share-guide p strong { color: var(--gold-light); }
+    .map-card { cursor: pointer; transition: transform 0.2s ease; }
+    .map-card:active { transform: scale(0.98); }
+    .map-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 250; display: none; align-items: flex-end; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+    .map-overlay.show { display: flex; opacity: 1; }
+    .map-sheet { width: 100%; max-width: 500px; background: #fff; border-radius: 20px 20px 0 0; padding: 24px 20px calc(20px + env(safe-area-inset-bottom)); transform: translateY(100%); transition: transform 0.3s ease; }
+    .map-overlay.show .map-sheet { transform: translateY(0); }
+    .map-sheet-title { font-size: 18px; font-weight: 600; color: var(--ink-dark); text-align: center; margin-bottom: 4px; }
+    .map-sheet-subtitle { font-size: 13px; color: var(--ink-brown); opacity: 0.6; text-align: center; margin-bottom: 20px; }
+    .map-option { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 12px; background: var(--paper-bg); margin-bottom: 10px; text-decoration: none; transition: background 0.2s ease; }
+    .map-option:active { background: var(--paper-bg-dark); }
+    .map-option-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; color: #fff; flex-shrink: 0; }
+    .map-option-icon.amap { background: linear-gradient(135deg, #00B4D8, #0077B6); }
+    .map-option-icon.bmap { background: linear-gradient(135deg, #2932E1, #1A1F71); }
+    .map-option-text { flex: 1; }
+    .map-option-name { font-size: 15px; font-weight: 600; color: var(--ink-dark); }
+    .map-option-desc { font-size: 12px; color: var(--ink-brown); opacity: 0.6; margin-top: 2px; }
+    .map-arrow { width: 20px; height: 20px; color: var(--ink-brown); opacity: 0.4; }
+    .map-cancel { width: 100%; height: 48px; border: none; border-radius: 12px; background: #f5f5f5; color: var(--ink-brown); font-family: inherit; font-size: 15px; cursor: pointer; margin-top: 8px; transition: background 0.2s ease; }
+    .map-cancel:active { background: #e8e8e8; }
     .splash-overlay {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 300;
       display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;
@@ -165,6 +184,29 @@
       <p>把这份喜悦分享给亲友</p>
     </div>
   </div>
+  <div class="map-overlay" id="mapOverlay">
+    <div class="map-sheet">
+      <div class="map-sheet-title">选择导航方式</div>
+      <div class="map-sheet-subtitle">湖南省桃江县三堂街镇合水桥</div>
+      <a class="map-option" id="amapBtn" href="javascript:void(0)">
+        <div class="map-option-icon amap">高</div>
+        <div class="map-option-text">
+          <div class="map-option-name">高德地图</div>
+          <div class="map-option-desc">推荐 · 路线精准</div>
+        </div>
+        <svg class="map-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a class="map-option" id="bmapBtn" href="javascript:void(0)">
+        <div class="map-option-icon bmap">百</div>
+        <div class="map-option-text">
+          <div class="map-option-name">百度地图</div>
+          <div class="map-option-desc">备选 · 数据全面</div>
+        </div>
+        <svg class="map-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <button class="map-cancel" id="mapCancel">取消</button>
+    </div>
+  </div>
   <div class="music-btn" id="musicBtn">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M9 18V5l12-2v13"/>
@@ -200,7 +242,7 @@
       </div>
     </div>
     <div class="map-section">
-      <div class="map-card">
+      <div class="map-card" id="mapCard">
         <div class="map-image-wrap">
           <img class="map-image" src="https://aka.doubaocdn.com/s/sklcNkLTXU" alt="婚礼地点地图">
         </div>
@@ -213,7 +255,7 @@
           </div>
           <div class="map-info-text">
             <div class="map-title">三堂街镇 · 合水桥 应良超市旁</div>
-            <div class="map-address">在家设宴 · 319省道</div>
+            <div class="map-address">在家设宴 · 319省道 · 点击导航</div>
           </div>
         </div>
       </div>
@@ -310,6 +352,29 @@
       }
     });
     shareOverlay.addEventListener('click', function() { shareOverlay.classList.remove('show'); });
+    const mapCard = document.getElementById('mapCard');
+    const mapOverlay = document.getElementById('mapOverlay');
+    const mapCancel = document.getElementById('mapCancel');
+    const amapBtn = document.getElementById('amapBtn');
+    const bmapBtn = document.getElementById('bmapBtn');
+    const mapLng = 111.858;
+    const mapLat = 28.605;
+    const mapName = '李政志&刘淑红婚礼-三堂街镇合水桥';
+    mapCard.addEventListener('click', function() { mapOverlay.classList.add('show'); });
+    mapOverlay.addEventListener('click', function(e) { if (e.target === mapOverlay) mapOverlay.classList.remove('show'); });
+    mapCancel.addEventListener('click', function() { mapOverlay.classList.remove('show'); });
+    amapBtn.addEventListener('click', function() {
+      mapOverlay.classList.remove('show');
+      setTimeout(function() {
+        window.location.href = 'https://uri.amap.com/navigation?to=' + mapLng + ',' + mapLat + ',' + encodeURIComponent(mapName) + '&mode=car&policy=1&src=wedding&coordinate=gaode&callnative=1';
+      }, 300);
+    });
+    bmapBtn.addEventListener('click', function() {
+      mapOverlay.classList.remove('show');
+      setTimeout(function() {
+        window.location.href = 'https://api.map.baidu.com/direction?destination=' + mapLat + ',' + mapLng + '&mode=driving&output=html&src=webapp.wedding';
+      }, 300);
+    });
     const calendarBtn = document.getElementById('calendarBtn');
     calendarBtn.addEventListener('click', function() {
       const icsContent = [
