@@ -7,6 +7,13 @@
   <meta name="description" content="李政志 & 刘淑红 结婚典礼邀请函 · 2026年10月3日 · 敬邀莅临">
   <meta property="og:title" content="李政志 & 刘淑红 · 结婚邀请函">
   <meta property="og:description" content="2026年10月3日 农历八月廿三 · 婚礼喜筵 敬邀莅临">
+  <meta property="og:image" content="https://aka.doubaocdn.com/s/b1xHVwBFos">
+  <meta property="og:image:width" content="2048">
+  <meta property="og:image:height" content="2048">
+  <meta property="og:url" content="https://lzz-sh.top/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://aka.doubaocdn.com/s/b1xHVwBFos">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   
@@ -23,9 +30,7 @@
       --gold: #C9A962;
       --gold-light: #DCC38A;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-
     html, body {
       width: 100%;
       overflow-x: hidden;
@@ -34,7 +39,6 @@
       background: var(--paper-bg);
       -webkit-font-smoothing: antialiased;
     }
-
     body {
       background-image: url('https://aka.doubaocdn.com/s/NhDPjUrowU');
       background-size: cover;
@@ -42,7 +46,6 @@
       background-repeat: no-repeat;
       background-attachment: fixed;
     }
-
     body::before {
       content: '';
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -50,29 +53,20 @@
       pointer-events: none;
       z-index: 1;
     }
-
     .page { position: relative; z-index: 2; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
-
-    /* 顶部装饰 */
     .top-ornament { width: 100%; padding: 32px 0 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; opacity: 0; transform: translateY(-20px); animation: fadeDown 1.2s ease forwards; animation-delay: 0.3s; }
     .ornament-line { display: flex; align-items: center; gap: 16px; }
     .ornament-line .line { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
     .ornament-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
     .we-need-you { font-size: 13px; letter-spacing: 6px; color: var(--ink-brown); opacity: 0.75; text-indent: 6px; }
-
-    /* 主图区域 */
     .invitation-image-wrap { width: 100%; max-width: 640px; padding: 0; opacity: 0; transform: translateY(30px); animation: fadeUp 1.4s ease forwards; animation-delay: 0.5s; }
     .invitation-image { width: 100%; height: auto; display: block; border-radius: 0; box-shadow: none; }
-
-    /* 倒计时 */
     .countdown-section { width: 100%; max-width: 600px; padding: 40px 32px 8px; opacity: 0; transform: translateY(20px); animation: fadeUp 1s ease forwards; animation-delay: 1s; }
     .countdown-title { text-align: center; font-size: 14px; letter-spacing: 4px; color: var(--ink-brown); opacity: 0.7; margin-bottom: 20px; text-indent: 4px; }
     .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
     .countdown-item { text-align: center; background: rgba(255, 255, 255, 0.35); border: 1px solid rgba(201, 169, 98, 0.35); border-radius: 14px; padding: 16px 4px 14px; position: relative; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
     .countdown-item .num { font-size: 28px; font-weight: 600; color: var(--vermilion); line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -1px; }
     .countdown-item .label { font-size: 11px; color: var(--ink-brown); opacity: 0.6; margin-top: 6px; letter-spacing: 2px; }
-
-    /* 操作按钮 */
     .action-section { width: 100%; max-width: 600px; padding: 28px 32px 8px; display: flex; gap: 12px; opacity: 0; transform: translateY(20px); animation: fadeUp 1s ease forwards; animation-delay: 1.4s; }
     .action-btn { flex: 1; height: 48px; border: none; border-radius: 24px; font-family: inherit; font-size: 15px; font-weight: 500; letter-spacing: 2px; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
     .action-btn.primary { background: var(--vermilion); color: #fff; box-shadow: 0 4px 16px rgba(196, 30, 58, 0.25); }
@@ -80,8 +74,6 @@
     .action-btn.secondary { background: transparent; color: var(--ink-brown); border: 1px solid var(--gold); }
     .action-btn.secondary:active { transform: scale(0.97); background: rgba(201, 169, 98, 0.1); }
     .action-btn svg { width: 18px; height: 18px; }
-
-    /* 地图 */
     .map-section { width: 100%; max-width: 600px; padding: 24px 24px 8px; opacity: 0; transform: translateY(20px); animation: fadeUp 1s ease forwards; animation-delay: 1.2s; }
     .map-card { border-radius: 16px; overflow: hidden; border: 1px solid rgba(201, 169, 98, 0.4); box-shadow: 0 4px 24px rgba(92, 58, 30, 0.1); background: var(--paper-bg); }
     .map-image-wrap { width: 100%; overflow: hidden; position: relative; }
@@ -91,14 +83,10 @@
     .map-info-icon svg { width: 18px; height: 18px; }
     .map-info-text .map-title { font-size: 15px; font-weight: 600; color: var(--ink-dark); line-height: 1.4; }
     .map-info-text .map-address { font-size: 12px; color: var(--ink-brown); opacity: 0.65; margin-top: 2px; }
-
-    /* 底部祝福 */
     .footer-blessing { width: 100%; padding: 48px 24px 80px; text-align: center; opacity: 0; transform: translateY(20px); animation: fadeUp 1s ease forwards; animation-delay: 1.8s; }
     .double-happiness { font-size: 48px; color: var(--vermilion); font-family: 'Ma Shan Zheng', 'Noto Serif SC', serif; margin-bottom: 16px; opacity: 0.9; line-height: 1; }
     .blessing-text { font-size: 14px; letter-spacing: 4px; color: var(--ink-brown); opacity: 0.7; line-height: 2; }
     .couple-names { font-size: 18px; letter-spacing: 6px; color: var(--ink-dark); margin-bottom: 12px; font-weight: 500; text-indent: 6px; }
-
-    /* 音乐按钮 */
     .music-btn { position: fixed; top: 20px; right: 20px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(201, 169, 98, 0.4); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 100; box-shadow: 0 2px 12px rgba(92, 58, 30, 0.12); transition: all 0.3s ease; opacity: 0; transform: scale(0.8); animation: musicIn 0.8s ease forwards; animation-delay: 2s; }
     .music-btn:active { transform: scale(0.92); }
     .music-btn svg { width: 20px; height: 20px; color: var(--vermilion); transition: transform 0.3s ease; }
@@ -107,16 +95,12 @@
     .music-btn.playing .music-note:nth-child(2) { animation-delay: 0s; }
     .music-btn.playing .music-note:nth-child(3) { animation-delay: 0.7s; }
     .music-btn.playing .music-note:nth-child(4) { animation-delay: 1.4s; }
-
-    /* 分享提示 */
     .share-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); z-index: 200; display: none; align-items: flex-start; justify-content: flex-end; padding: 20px 20px 0; opacity: 0; transition: opacity 0.3s ease; }
     .share-overlay.show { display: flex; opacity: 1; }
     .share-guide { text-align: right; color: #fff; padding-top: 12px; }
     .share-guide svg { width: 40px; height: 40px; margin-bottom: 12px; margin-left: auto; display: block; }
     .share-guide p { font-size: 15px; line-height: 1.8; letter-spacing: 1px; }
     .share-guide p strong { color: var(--gold-light); }
-
-    /* 开屏遮罩 */
     .splash-overlay {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 300;
       display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;
@@ -140,8 +124,6 @@
     .splash-enter { margin-top: 32px; padding: 14px 48px; background: var(--vermilion); color: #fff; border: none; border-radius: 28px; font-family: inherit; font-size: 15px; letter-spacing: 4px; cursor: pointer; box-shadow: 0 4px 20px rgba(196, 30, 58, 0.3); transition: all 0.3s ease; animation: bounce 2s ease-in-out infinite; position: relative; z-index: 1; }
     .splash-enter:active { transform: scale(0.95); }
     .splash-tip { font-size: 12px; color: var(--ink-brown); opacity: 0.5; letter-spacing: 2px; margin-top: 16px; position: relative; z-index: 1; }
-
-    /* 动画 */
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeDown { to { opacity: 1; transform: translateY(0); } }
     @keyframes musicIn { to { opacity: 1; transform: scale(1); } }
@@ -149,8 +131,6 @@
     @keyframes noteFloat { 0% { transform: translateY(0) scale(1); opacity: 0.8; } 100% { transform: translateY(-40px) scale(0.5); opacity: 0; } }
     @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.9; } }
     @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
-
-    /* 响应式 */
     @media (min-width: 640px) {
       .invitation-image-wrap { padding: 16px 40px 0; }
       .countdown-section { padding: 48px 40px 8px; }
@@ -158,14 +138,12 @@
       .action-section { padding: 28px 40px 8px; }
       .map-section { padding: 24px 32px 8px; }
     }
-
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
     }
   </style>
 </head>
 <body>
-  <!-- 开屏遮罩 -->
   <div class="splash-overlay" id="splashOverlay">
     <div class="splash-logo">
       <img src="https://aka.doubaocdn.com/s/G3XcTJwbvh" alt="结婚Logo">
@@ -175,8 +153,6 @@
     <button class="splash-enter" id="enterBtn">收 下 邀 请</button>
     <div class="splash-tip">点击开启 · 背景音乐随之响起</div>
   </div>
-
-  <!-- 分享提示 -->
   <div class="share-overlay" id="shareOverlay">
     <div class="share-guide">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -189,8 +165,6 @@
       <p>把这份喜悦分享给亲友</p>
     </div>
   </div>
-
-  <!-- 音乐按钮 -->
   <div class="music-btn" id="musicBtn">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M9 18V5l12-2v13"/>
@@ -201,14 +175,10 @@
     <span class="music-note" style="top: -8px; right: 4px;">♫</span>
     <span class="music-note" style="top: -2px; right: -2px;">♪</span>
   </div>
-
-  <!-- 背景音乐 -->
   <audio id="bgm" loop preload="auto">
     <source src="https://aka.doubaocdn.com/s/8eEjU8ggBe" type="audio/mpeg">
   </audio>
-
   <div class="page">
-    <!-- 顶部装饰 -->
     <div class="top-ornament">
       <div class="ornament-line">
         <div class="line"></div>
@@ -217,13 +187,9 @@
       </div>
       <div class="we-need-you">诚 挚 邀 请</div>
     </div>
-
-    <!-- 邀请函主图 -->
     <div class="invitation-image-wrap">
       <img class="invitation-image" src="https://aka.doubaocdn.com/s/Uvw8SygVtF" alt="李政志 & 刘淑红 结婚邀请函">
     </div>
-
-    <!-- 倒计时 -->
     <div class="countdown-section">
       <div class="countdown-title">距 离 婚 礼 还 有</div>
       <div class="countdown-grid" id="countdownGrid">
@@ -233,8 +199,6 @@
         <div class="countdown-item"><div class="num" id="seconds">--</div><div class="label">秒</div></div>
       </div>
     </div>
-
-    <!-- 地图 -->
     <div class="map-section">
       <div class="map-card">
         <div class="map-image-wrap">
@@ -254,8 +218,6 @@
         </div>
       </div>
     </div>
-
-    <!-- 操作按钮 -->
     <div class="action-section">
       <button class="action-btn secondary" id="shareBtn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -276,46 +238,35 @@
         添加日历
       </button>
     </div>
-
-    <!-- 底部祝福 -->
     <div class="footer-blessing">
       <div class="double-happiness">囍</div>
       <div class="couple-names">李政志 &nbsp;&amp;&nbsp; 刘淑红</div>
       <div class="blessing-text">婚 礼 喜 筵 &nbsp; 敬 邀 莅 临</div>
     </div>
   </div>
-
   <script>
-    // === BGM 音乐控制 ===
     const bgm = document.getElementById('bgm');
     const musicBtn = document.getElementById('musicBtn');
     const splashOverlay = document.getElementById('splashOverlay');
     const enterBtn = document.getElementById('enterBtn');
     let isPlaying = false;
-
     function toggleMusic() {
       if (isPlaying) { bgm.pause(); musicBtn.classList.remove('playing'); }
       else { bgm.play().then(() => { musicBtn.classList.add('playing'); }).catch(err => console.log('播放失败:', err)); }
       isPlaying = !isPlaying;
     }
-
     musicBtn.addEventListener('click', toggleMusic);
-
     enterBtn.addEventListener('click', function() {
       bgm.volume = 0.6;
       bgm.play().then(() => { musicBtn.classList.add('playing'); isPlaying = true; })
         .catch(err => console.log('自动播放被阻止:', err));
       splashOverlay.classList.add('hidden');
     });
-
     document.addEventListener('visibilitychange', function() {
       if (document.hidden) { if (isPlaying) bgm.pause(); }
       else { if (isPlaying) bgm.play().catch(() => {}); }
     });
-
-    // === 倒计时 ===
     const weddingDate = new Date('2026-10-03T12:08:00').getTime();
-
     function updateCountdown() {
       const now = new Date().getTime();
       const diff = weddingDate - now;
@@ -337,11 +288,8 @@
     }
     updateCountdown();
     setInterval(updateCountdown, 1000);
-
-    // === 分享功能 ===
     const shareBtn = document.getElementById('shareBtn');
     const shareOverlay = document.getElementById('shareOverlay');
-
     shareBtn.addEventListener('click', function() {
       const ua = navigator.userAgent.toLowerCase();
       const isWeChat = /micromessenger/.test(ua);
@@ -362,8 +310,6 @@
       }
     });
     shareOverlay.addEventListener('click', function() { shareOverlay.classList.remove('show'); });
-
-    // === 添加日历 ===
     const calendarBtn = document.getElementById('calendarBtn');
     calendarBtn.addEventListener('click', function() {
       const icsContent = [
@@ -388,7 +334,6 @@
         calendarBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> 添加日历`;
       }, 2000);
     });
-
     document.addEventListener('WeixinJSBridgeReady', function() {}, false);
   </script>
 </body>
