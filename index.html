@@ -7,18 +7,16 @@
   <meta name="description" content="李政志 & 刘淑红 结婚典礼邀请函 · 2026年10月3日 · 敬邀莅临">
   <meta property="og:title" content="李政志 & 刘淑红 · 结婚邀请函">
   <meta property="og:description" content="2026年10月3日 农历八月廿三 · 婚礼喜筵 敬邀莅临">
-  <meta property="og:image" content="https://aka.doubaocdn.com/s/iDlEgpjVUs">
+  <meta property="og:image" content="https://lzz-sh.top/logo.png">
   <meta property="og:image:width" content="800">
   <meta property="og:image:height" content="800">
   <meta property="og:url" content="https://lzz-sh.top/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://aka.doubaocdn.com/s/iDlEgpjVUs">
+  <meta name="twitter:image" content="https://lzz-sh.top/logo.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Ma+Shan+Zheng&display=swap">
-  
   <style>
     :root {
       --paper-bg: #F0E9D8;
@@ -40,7 +38,7 @@
       -webkit-font-smoothing: antialiased;
     }
     body {
-      background-image: url('https://aka.doubaocdn.com/s/NhDPjUrowU');
+      background-image: url('bg.jpg');
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
@@ -75,7 +73,8 @@
     .action-btn.secondary:active { transform: scale(0.97); background: rgba(201, 169, 98, 0.1); }
     .action-btn svg { width: 18px; height: 18px; }
     .map-section { width: 100%; max-width: 600px; padding: 24px 24px 8px; opacity: 0; transform: translateY(20px); animation: fadeUp 1s ease forwards; animation-delay: 1.2s; }
-    .map-card { border-radius: 16px; overflow: hidden; border: 1px solid rgba(201, 169, 98, 0.4); box-shadow: 0 4px 24px rgba(92, 58, 30, 0.1); background: var(--paper-bg); }
+    .map-card { border-radius: 16px; overflow: hidden; border: 1px solid rgba(201, 169, 98, 0.4); box-shadow: 0 4px 24px rgba(92, 58, 30, 0.1); background: var(--paper-bg); cursor: pointer; transition: transform 0.2s ease; }
+    .map-card:active { transform: scale(0.98); }
     .map-image-wrap { width: 100%; overflow: hidden; position: relative; }
     .map-image { width: 100%; height: auto; display: block; filter: saturate(1.2) sepia(0.08) brightness(1.02); }
     .map-info { padding: 16px 20px; display: flex; align-items: center; gap: 12px; background: rgba(255, 255, 255, 0.4); border-top: 1px solid rgba(201, 169, 98, 0.25); }
@@ -101,8 +100,6 @@
     .share-guide svg { width: 40px; height: 40px; margin-bottom: 12px; margin-left: auto; display: block; }
     .share-guide p { font-size: 15px; line-height: 1.8; letter-spacing: 1px; }
     .share-guide p strong { color: var(--gold-light); }
-    .map-card { cursor: pointer; transition: transform 0.2s ease; }
-    .map-card:active { transform: scale(0.98); }
     .map-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 250; display: none; align-items: flex-end; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
     .map-overlay.show { display: flex; opacity: 1; }
     .map-sheet { width: 100%; max-width: 500px; background: #fff; border-radius: 20px 20px 0 0; padding: 24px 20px calc(20px + env(safe-area-inset-bottom)); transform: translateY(100%); transition: transform 0.3s ease; }
@@ -124,7 +121,7 @@
       position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 300;
       display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;
       transition: opacity 0.8s ease, visibility 0.8s ease;
-      background-image: url('https://aka.doubaocdn.com/s/NhDPjUrowU');
+      background-image: url('bg.jpg');
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
@@ -148,7 +145,6 @@
     @keyframes musicIn { to { opacity: 1; transform: scale(1); } }
     @keyframes musicSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     @keyframes noteFloat { 0% { transform: translateY(0) scale(1); opacity: 0.8; } 100% { transform: translateY(-40px) scale(0.5); opacity: 0; } }
-    @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.9; } }
     @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
     @media (min-width: 640px) {
       .invitation-image-wrap { padding: 16px 40px 0; }
@@ -165,7 +161,7 @@
 <body>
   <div class="splash-overlay" id="splashOverlay">
     <div class="splash-logo">
-      <img src="https://aka.doubaocdn.com/s/G3XcTJwbvh" alt="结婚Logo">
+      <img src="logo.png" alt="结婚Logo">
     </div>
     <div class="splash-title">结 婚 邀 请 函</div>
     <div class="splash-names">李政志 · 刘淑红</div>
@@ -218,7 +214,7 @@
     <span class="music-note" style="top: -2px; right: -2px;">♪</span>
   </div>
   <audio id="bgm" loop preload="auto">
-    <source src="https://aka.doubaocdn.com/s/8eEjU8ggBe" type="audio/mpeg">
+    <source src="bgm.mp3" type="audio/mpeg">
   </audio>
   <div class="page">
     <div class="top-ornament">
@@ -230,7 +226,7 @@
       <div class="we-need-you">诚 挚 邀 请</div>
     </div>
     <div class="invitation-image-wrap">
-      <img class="invitation-image" src="https://aka.doubaocdn.com/s/Uvw8SygVtF" alt="李政志 & 刘淑红 结婚邀请函">
+      <img class="invitation-image" src="invitation.jpg" alt="李政志 & 刘淑红 结婚邀请函">
     </div>
     <div class="countdown-section">
       <div class="countdown-title">距 离 婚 礼 还 有</div>
@@ -244,7 +240,7 @@
     <div class="map-section">
       <div class="map-card" id="mapCard">
         <div class="map-image-wrap">
-          <img class="map-image" src="https://aka.doubaocdn.com/s/sklcNkLTXU" alt="婚礼地点地图">
+          <img class="map-image" src="map.jpg" alt="婚礼地点地图">
         </div>
         <div class="map-info">
           <div class="map-info-icon">
